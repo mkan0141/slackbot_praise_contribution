@@ -30,7 +30,7 @@ if __name__ == '__main__':
     for user in user_data['github_user_id']:
         continue_contributes = 0
         contributes = get_github_contributes(user)
-        for contribute in contributes[::-1]:
+        for contribute in contributes[-2::-1]:
             # print(contribute != ['0'])
             if contribute != ['0']:
                 continue_contributes += 1
