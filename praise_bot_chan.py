@@ -6,6 +6,10 @@ def load_file():
     csv_reader = pd.read_csv('./config/member_list.csv')
     return csv_reader
 
+def praise(user, contributes):
+    if contributes:
+        print(f'昨日の{user}さんのコントリビュート数は{contributes}だよ！毎日継続してえらい！！')
+
 def get_github_contributes(user_id):
     url = "https://github.com/users/" + user_id + "/contributions"
     response = requests.get(url)
@@ -36,4 +40,4 @@ if __name__ == '__main__':
                 continue_contributes += 1
             else:
                 break
-        print(continue_contributes)
+        praise(user,continue_contributes)
